@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace GentlemensCloset
 {
-    public partial class ProductForm : Form
+    public partial class CategoryForm : Form
     {
-        public ProductForm()
+        public CategoryForm()
         {
             InitializeComponent();
         }
 
-       
+        
     }
 }

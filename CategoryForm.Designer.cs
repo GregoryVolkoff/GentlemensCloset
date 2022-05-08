@@ -1,6 +1,6 @@
 ﻿namespace GentlemensCloset
 {
-    partial class ProductForm
+    partial class CategoryForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CategoryForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker4 = new System.ComponentModel.BackgroundWorker();
             this.panel_options = new System.Windows.Forms.Panel();
             this.button_logout = new Guna.UI2.WinForms.Guna2Button();
             this.button_selling = new Guna.UI2.WinForms.Guna2Button();
@@ -40,21 +44,14 @@
             this.panel_user = new System.Windows.Forms.Panel();
             this.label_username = new System.Windows.Forms.Label();
             this.pictureBox_user = new System.Windows.Forms.PictureBox();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel_head = new System.Windows.Forms.Panel();
             this.label_head = new System.Windows.Forms.Label();
             this.exitPicture = new System.Windows.Forms.PictureBox();
             this.panel_main = new System.Windows.Forms.Panel();
             this.DataGridView_products = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.button_refresh = new Guna.UI2.WinForms.Guna2Button();
-            this.comboBox_refresh = new Guna.UI2.WinForms.Guna2ComboBox();
             this.button_update = new Guna.UI2.WinForms.Guna2Button();
             this.button_delete = new Guna.UI2.WinForms.Guna2Button();
             this.button_add = new Guna.UI2.WinForms.Guna2Button();
-            this.comboBox_category = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label_category = new System.Windows.Forms.Label();
-            this.textBox_price = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label_price = new System.Windows.Forms.Label();
             this.textBox_quantity = new Guna.UI2.WinForms.Guna2TextBox();
             this.label_quantity = new System.Windows.Forms.Label();
             this.textBox_name = new Guna.UI2.WinForms.Guna2TextBox();
@@ -82,7 +79,7 @@
             this.panel_options.Location = new System.Drawing.Point(0, 0);
             this.panel_options.Name = "panel_options";
             this.panel_options.Size = new System.Drawing.Size(220, 910);
-            this.panel_options.TabIndex = 0;
+            this.panel_options.TabIndex = 1;
             // 
             // button_logout
             // 
@@ -135,7 +132,7 @@
             this.button_category.Name = "button_category";
             this.button_category.Size = new System.Drawing.Size(220, 80);
             this.button_category.TabIndex = 2;
-            this.button_category.Text = "Categoría";
+            this.button_category.Text = "Producto";
             this.button_category.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // button_employee
@@ -198,7 +195,7 @@
             this.panel_head.Location = new System.Drawing.Point(220, 0);
             this.panel_head.Name = "panel_head";
             this.panel_head.Size = new System.Drawing.Size(1380, 57);
-            this.panel_head.TabIndex = 1;
+            this.panel_head.TabIndex = 2;
             // 
             // label_head
             // 
@@ -207,9 +204,9 @@
             this.label_head.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label_head.Location = new System.Drawing.Point(445, 9);
             this.label_head.Name = "label_head";
-            this.label_head.Size = new System.Drawing.Size(480, 39);
+            this.label_head.Size = new System.Drawing.Size(491, 39);
             this.label_head.TabIndex = 16;
-            this.label_head.Text = "GESTIONAR PRODUCTOS";
+            this.label_head.Text = "GESTIONAR CATEGORIAS";
             // 
             // exitPicture
             // 
@@ -226,15 +223,9 @@
             // 
             this.panel_main.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel_main.Controls.Add(this.DataGridView_products);
-            this.panel_main.Controls.Add(this.button_refresh);
-            this.panel_main.Controls.Add(this.comboBox_refresh);
             this.panel_main.Controls.Add(this.button_update);
             this.panel_main.Controls.Add(this.button_delete);
             this.panel_main.Controls.Add(this.button_add);
-            this.panel_main.Controls.Add(this.comboBox_category);
-            this.panel_main.Controls.Add(this.label_category);
-            this.panel_main.Controls.Add(this.textBox_price);
-            this.panel_main.Controls.Add(this.label_price);
             this.panel_main.Controls.Add(this.textBox_quantity);
             this.panel_main.Controls.Add(this.label_quantity);
             this.panel_main.Controls.Add(this.textBox_name);
@@ -245,7 +236,7 @@
             this.panel_main.Location = new System.Drawing.Point(220, 57);
             this.panel_main.Name = "panel_main";
             this.panel_main.Size = new System.Drawing.Size(1380, 853);
-            this.panel_main.TabIndex = 2;
+            this.panel_main.TabIndex = 3;
             // 
             // DataGridView_products
             // 
@@ -308,39 +299,6 @@
             this.DataGridView_products.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DataGridView_products.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // button_refresh
-            // 
-            this.button_refresh.BorderRadius = 5;
-            this.button_refresh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.button_refresh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.button_refresh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.button_refresh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.button_refresh.FillColor = System.Drawing.Color.RoyalBlue;
-            this.button_refresh.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_refresh.ForeColor = System.Drawing.Color.White;
-            this.button_refresh.Location = new System.Drawing.Point(1019, 13);
-            this.button_refresh.Name = "button_refresh";
-            this.button_refresh.Size = new System.Drawing.Size(144, 45);
-            this.button_refresh.TabIndex = 15;
-            this.button_refresh.Text = "Refrescar";
-            // 
-            // comboBox_refresh
-            // 
-            this.comboBox_refresh.BackColor = System.Drawing.Color.Transparent;
-            this.comboBox_refresh.BorderColor = System.Drawing.Color.Gray;
-            this.comboBox_refresh.BorderRadius = 5;
-            this.comboBox_refresh.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBox_refresh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_refresh.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBox_refresh.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBox_refresh.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_refresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.comboBox_refresh.ItemHeight = 30;
-            this.comboBox_refresh.Location = new System.Drawing.Point(741, 17);
-            this.comboBox_refresh.Name = "comboBox_refresh";
-            this.comboBox_refresh.Size = new System.Drawing.Size(260, 36);
-            this.comboBox_refresh.TabIndex = 14;
-            // 
             // button_update
             // 
             this.button_update.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -352,7 +310,7 @@
             this.button_update.FillColor = System.Drawing.Color.RoyalBlue;
             this.button_update.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_update.ForeColor = System.Drawing.Color.White;
-            this.button_update.Location = new System.Drawing.Point(186, 490);
+            this.button_update.Location = new System.Drawing.Point(185, 325);
             this.button_update.Name = "button_update";
             this.button_update.Size = new System.Drawing.Size(144, 45);
             this.button_update.TabIndex = 11;
@@ -368,7 +326,7 @@
             this.button_delete.FillColor = System.Drawing.Color.RoyalBlue;
             this.button_delete.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_delete.ForeColor = System.Drawing.Color.White;
-            this.button_delete.Location = new System.Drawing.Point(336, 490);
+            this.button_delete.Location = new System.Drawing.Point(335, 325);
             this.button_delete.Name = "button_delete";
             this.button_delete.Size = new System.Drawing.Size(144, 45);
             this.button_delete.TabIndex = 12;
@@ -384,73 +342,11 @@
             this.button_add.FillColor = System.Drawing.Color.RoyalBlue;
             this.button_add.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_add.ForeColor = System.Drawing.Color.White;
-            this.button_add.Location = new System.Drawing.Point(36, 490);
+            this.button_add.Location = new System.Drawing.Point(35, 325);
             this.button_add.Name = "button_add";
             this.button_add.Size = new System.Drawing.Size(144, 45);
             this.button_add.TabIndex = 10;
             this.button_add.Text = "Añadir";
-            // 
-            // comboBox_category
-            // 
-            this.comboBox_category.BackColor = System.Drawing.Color.Transparent;
-            this.comboBox_category.BorderColor = System.Drawing.Color.Gray;
-            this.comboBox_category.BorderRadius = 5;
-            this.comboBox_category.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBox_category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_category.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBox_category.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBox_category.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_category.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.comboBox_category.ItemHeight = 30;
-            this.comboBox_category.Location = new System.Drawing.Point(186, 394);
-            this.comboBox_category.Name = "comboBox_category";
-            this.comboBox_category.Size = new System.Drawing.Size(294, 36);
-            this.comboBox_category.TabIndex = 9;
-            // 
-            // label_category
-            // 
-            this.label_category.AutoSize = true;
-            this.label_category.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_category.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label_category.Location = new System.Drawing.Point(36, 406);
-            this.label_category.Name = "label_category";
-            this.label_category.Size = new System.Drawing.Size(116, 25);
-            this.label_category.TabIndex = 8;
-            this.label_category.Text = "Categoría";
-            // 
-            // textBox_price
-            // 
-            this.textBox_price.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.textBox_price.BorderColor = System.Drawing.Color.Gray;
-            this.textBox_price.BorderRadius = 5;
-            this.textBox_price.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox_price.DefaultText = "";
-            this.textBox_price.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.textBox_price.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.textBox_price.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textBox_price.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textBox_price.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBox_price.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_price.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBox_price.Location = new System.Drawing.Point(186, 313);
-            this.textBox_price.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.textBox_price.Name = "textBox_price";
-            this.textBox_price.PasswordChar = '\0';
-            this.textBox_price.PlaceholderText = "";
-            this.textBox_price.SelectedText = "";
-            this.textBox_price.Size = new System.Drawing.Size(294, 40);
-            this.textBox_price.TabIndex = 7;
-            // 
-            // label_price
-            // 
-            this.label_price.AutoSize = true;
-            this.label_price.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_price.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label_price.Location = new System.Drawing.Point(36, 322);
-            this.label_price.Name = "label_price";
-            this.label_price.Size = new System.Drawing.Size(81, 25);
-            this.label_price.TabIndex = 6;
-            this.label_price.Text = "Precio";
             // 
             // textBox_quantity
             // 
@@ -466,7 +362,7 @@
             this.textBox_quantity.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBox_quantity.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_quantity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBox_quantity.Location = new System.Drawing.Point(186, 232);
+            this.textBox_quantity.Location = new System.Drawing.Point(185, 240);
             this.textBox_quantity.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.textBox_quantity.Name = "textBox_quantity";
             this.textBox_quantity.PasswordChar = '\0';
@@ -480,7 +376,7 @@
             this.label_quantity.AutoSize = true;
             this.label_quantity.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_quantity.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label_quantity.Location = new System.Drawing.Point(36, 238);
+            this.label_quantity.Location = new System.Drawing.Point(35, 244);
             this.label_quantity.Name = "label_quantity";
             this.label_quantity.Size = new System.Drawing.Size(111, 25);
             this.label_quantity.TabIndex = 4;
@@ -500,7 +396,7 @@
             this.textBox_name.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBox_name.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_name.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBox_name.Location = new System.Drawing.Point(186, 151);
+            this.textBox_name.Location = new System.Drawing.Point(185, 155);
             this.textBox_name.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.textBox_name.Name = "textBox_name";
             this.textBox_name.PasswordChar = '\0';
@@ -514,7 +410,7 @@
             this.label_name.AutoSize = true;
             this.label_name.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_name.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label_name.Location = new System.Drawing.Point(36, 154);
+            this.label_name.Location = new System.Drawing.Point(35, 161);
             this.label_name.Name = "label_name";
             this.label_name.Size = new System.Drawing.Size(101, 25);
             this.label_name.TabIndex = 2;
@@ -534,7 +430,7 @@
             this.textBox_id.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBox_id.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_id.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBox_id.Location = new System.Drawing.Point(186, 70);
+            this.textBox_id.Location = new System.Drawing.Point(185, 70);
             this.textBox_id.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.textBox_id.Name = "textBox_id";
             this.textBox_id.PasswordChar = '\0';
@@ -548,13 +444,13 @@
             this.label_id.AutoSize = true;
             this.label_id.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_id.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label_id.Location = new System.Drawing.Point(36, 70);
+            this.label_id.Location = new System.Drawing.Point(35, 78);
             this.label_id.Name = "label_id";
             this.label_id.Size = new System.Drawing.Size(39, 25);
             this.label_id.TabIndex = 0;
             this.label_id.Text = "ID";
             // 
-            // ProductForm
+            // CategoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -563,9 +459,8 @@
             this.Controls.Add(this.panel_head);
             this.Controls.Add(this.panel_options);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ProductForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ProductForm";
+            this.Name = "CategoryForm";
+            this.Text = "CategoryForm";
             this.panel_options.ResumeLayout(false);
             this.panel_user.ResumeLayout(false);
             this.panel_user.PerformLayout();
@@ -581,35 +476,31 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel_options;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private System.ComponentModel.BackgroundWorker backgroundWorker3;
+        private System.ComponentModel.BackgroundWorker backgroundWorker4;
+        private System.Windows.Forms.Panel panel_options;
+        private Guna.UI2.WinForms.Guna2Button button_logout;
+        private Guna.UI2.WinForms.Guna2Button button_selling;
+        private Guna.UI2.WinForms.Guna2Button button_category;
+        private Guna.UI2.WinForms.Guna2Button button_employee;
         private System.Windows.Forms.Panel panel_user;
+        private System.Windows.Forms.Label label_username;
+        private System.Windows.Forms.PictureBox pictureBox_user;
         private System.Windows.Forms.Panel panel_head;
+        private System.Windows.Forms.Label label_head;
+        private System.Windows.Forms.PictureBox exitPicture;
         private System.Windows.Forms.Panel panel_main;
-        private Guna.UI2.WinForms.Guna2ComboBox comboBox_category;
-        private System.Windows.Forms.Label label_category;
-        private Guna.UI2.WinForms.Guna2TextBox textBox_price;
-        private System.Windows.Forms.Label label_price;
+        private Guna.UI2.WinForms.Guna2DataGridView DataGridView_products;
+        private Guna.UI2.WinForms.Guna2Button button_update;
+        private Guna.UI2.WinForms.Guna2Button button_delete;
+        private Guna.UI2.WinForms.Guna2Button button_add;
         private Guna.UI2.WinForms.Guna2TextBox textBox_quantity;
         private System.Windows.Forms.Label label_quantity;
         private Guna.UI2.WinForms.Guna2TextBox textBox_name;
         private System.Windows.Forms.Label label_name;
         private Guna.UI2.WinForms.Guna2TextBox textBox_id;
         private System.Windows.Forms.Label label_id;
-        private Guna.UI2.WinForms.Guna2Button button_update;
-        private Guna.UI2.WinForms.Guna2Button button_delete;
-        private Guna.UI2.WinForms.Guna2Button button_add;
-        private System.Windows.Forms.PictureBox exitPicture;
-        private Guna.UI2.WinForms.Guna2Button button_selling;
-        private Guna.UI2.WinForms.Guna2Button button_category;
-        private Guna.UI2.WinForms.Guna2Button button_employee;
-        private System.Windows.Forms.Label label_head;
-        private Guna.UI2.WinForms.Guna2Button button_refresh;
-        private Guna.UI2.WinForms.Guna2ComboBox comboBox_refresh;
-        private Guna.UI2.WinForms.Guna2Button button_logout;
-        private System.Windows.Forms.Label label_username;
-        private System.Windows.Forms.PictureBox pictureBox_user;
-        private Guna.UI2.WinForms.Guna2DataGridView DataGridView_products;
     }
 }
