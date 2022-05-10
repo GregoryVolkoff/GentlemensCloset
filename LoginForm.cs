@@ -42,5 +42,40 @@ namespace GentlemensCloset
             usernameTextBox.Clear();
             passwordTextBox.Clear();
         }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            if (usernameTextBox.Text == "" || passwordTextBox.Text == "")
+            {
+                MessageBox.Show("Please Enter Username and Password", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (roleComboBox.SelectedIndex > -1)
+                {
+                    if (roleComboBox.SelectedItem.ToString() == "ADMIN")
+                    {
+                        if (usernameTextBox.Text == "Admin" && passwordTextBox.Text == "Admin123")
+                        {
+                            CategoryForm category = new CategoryForm();
+                            category.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Si eres Admin, introduce nombre de usuario y contraseña correctos", "Id incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                    else
+                    {
+                       
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Elige un rol", "Datos incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
     }
 }

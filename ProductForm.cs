@@ -17,6 +17,14 @@ namespace GentlemensCloset
             InitializeComponent();
         }
 
-       
+        private void exitPicture_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_logout_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

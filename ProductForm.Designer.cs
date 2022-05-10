@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel_options = new System.Windows.Forms.Panel();
             this.button_logout = new Guna.UI2.WinForms.Guna2Button();
             this.button_selling = new Guna.UI2.WinForms.Guna2Button();
@@ -81,7 +81,7 @@
             this.panel_options.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_options.Location = new System.Drawing.Point(0, 0);
             this.panel_options.Name = "panel_options";
-            this.panel_options.Size = new System.Drawing.Size(220, 910);
+            this.panel_options.Size = new System.Drawing.Size(220, 900);
             this.panel_options.TabIndex = 0;
             // 
             // button_logout
@@ -95,12 +95,13 @@
             this.button_logout.FillColor = System.Drawing.Color.RoyalBlue;
             this.button_logout.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_logout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button_logout.Location = new System.Drawing.Point(0, 830);
+            this.button_logout.Location = new System.Drawing.Point(0, 820);
             this.button_logout.Name = "button_logout";
             this.button_logout.Size = new System.Drawing.Size(220, 80);
             this.button_logout.TabIndex = 4;
             this.button_logout.Text = "Salir";
             this.button_logout.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.button_logout.Click += new System.EventHandler(this.button_logout_Click);
             // 
             // button_selling
             // 
@@ -221,6 +222,7 @@
             this.exitPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.exitPicture.TabIndex = 11;
             this.exitPicture.TabStop = false;
+            this.exitPicture.Click += new System.EventHandler(this.exitPicture_Click);
             // 
             // panel_main
             // 
@@ -244,13 +246,13 @@
             this.panel_main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_main.Location = new System.Drawing.Point(220, 57);
             this.panel_main.Name = "panel_main";
-            this.panel_main.Size = new System.Drawing.Size(1380, 853);
-            this.panel_main.TabIndex = 2;
+            this.panel_main.Size = new System.Drawing.Size(1380, 843);
+            this.panel_main.TabIndex = 14;
             // 
             // DataGridView_products
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.DataGridView_products.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.DataGridView_products.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.DataGridView_products.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -259,23 +261,23 @@
             this.DataGridView_products.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DataGridView_products.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DataGridView_products.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridView_products.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridView_products.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.DataGridView_products.ColumnHeadersHeight = 4;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridView_products.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridView_products.DefaultCellStyle = dataGridViewCellStyle9;
             this.DataGridView_products.EnableHeadersVisualStyles = false;
             this.DataGridView_products.GridColor = System.Drawing.Color.Gray;
             this.DataGridView_products.Location = new System.Drawing.Point(517, 70);
@@ -284,7 +286,7 @@
             this.DataGridView_products.RowHeadersWidth = 72;
             this.DataGridView_products.RowTemplate.Height = 31;
             this.DataGridView_products.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridView_products.Size = new System.Drawing.Size(840, 760);
+            this.DataGridView_products.Size = new System.Drawing.Size(840, 750);
             this.DataGridView_products.TabIndex = 16;
             this.DataGridView_products.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DataGridView_products.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -558,7 +560,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1600, 910);
+            this.ClientSize = new System.Drawing.Size(1600, 900);
             this.Controls.Add(this.panel_main);
             this.Controls.Add(this.panel_head);
             this.Controls.Add(this.panel_options);

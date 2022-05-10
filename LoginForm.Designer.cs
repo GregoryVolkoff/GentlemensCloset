@@ -42,7 +42,7 @@
             this.usernameTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.passwordTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.loginButton = new Guna.UI2.WinForms.Guna2Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.roleComboBox = new System.Windows.Forms.ComboBox();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.exitPicture)).BeginInit();
@@ -210,21 +210,22 @@
             this.loginButton.Size = new System.Drawing.Size(348, 43);
             this.loginButton.TabIndex = 8;
             this.loginButton.Text = "Login";
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
-            // comboBox1
+            // roleComboBox
             // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.comboBox1.Font = new System.Drawing.Font("Georgia", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.roleComboBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.roleComboBox.Font = new System.Drawing.Font("Georgia", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roleComboBox.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.roleComboBox.FormattingEnabled = true;
+            this.roleComboBox.Items.AddRange(new object[] {
             "ADMIN",
-            "SELLER"});
-            this.comboBox1.Location = new System.Drawing.Point(504, 405);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(349, 29);
-            this.comboBox1.TabIndex = 11;
-            this.comboBox1.Text = "Elige rol";
+            "Empleado"});
+            this.roleComboBox.Location = new System.Drawing.Point(504, 405);
+            this.roleComboBox.Name = "roleComboBox";
+            this.roleComboBox.Size = new System.Drawing.Size(349, 29);
+            this.roleComboBox.TabIndex = 11;
+            this.roleComboBox.Text = "Elige rol";
             // 
             // FormLogin
             // 
@@ -232,7 +233,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1375, 860);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.roleComboBox);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.usernameTextBox);
@@ -270,7 +271,7 @@
         private Guna.UI2.WinForms.Guna2Button loginButton;
         private System.Windows.Forms.PictureBox exitPicture;
         private System.Windows.Forms.Label headerLabel;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox roleComboBox;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
     }
 }
