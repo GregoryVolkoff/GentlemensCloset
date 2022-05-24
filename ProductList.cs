@@ -88,13 +88,29 @@ namespace GentlemensCloset
         {
             products.Add(product);
         }
-        public void UpdateCategory(int pos, string id, string name, int quantity, decimal price, string category)
+        public void UpdateProduct(int pos, string id, string name, int quantity, decimal price, string category)
         {
             products[pos].id = id;
             products[pos].name = name;
             products[pos].quantity = quantity;
             products[pos].price = price;
             products[pos].category = category;
+        }
+        public void RemoveProduct(int index)
+        {
+            products.RemoveAt(index);
+        }
+        public List<Product> GetProductsByCategory(string category)
+        {
+            List<Product> productList = new List<Product>();
+            foreach (Product p in products)
+            {
+                if (p.category == category)
+                {
+                    productList.Add(p);
+                }
+            }
+            return productList;
         }
     }
 }

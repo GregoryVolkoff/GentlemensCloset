@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GentlemensCloset
@@ -61,22 +55,28 @@ namespace GentlemensCloset
             DataGridView_products.Columns["quantity"].HeaderText = "Cantidad";
             DataGridView_products.Columns["price"].HeaderText = "Precio";
             DataGridView_products.Columns["category"].HeaderText = "Categoría";
-
         }
 
         private void button_add_Click(object sender, EventArgs e)
         {
-            string id = textBox_id.Text;
-            string name = textBox_name.Text;
-            decimal price = Convert.ToDecimal(textBox_price.Text);
-            int quantity = Convert.ToInt32(textBox_quantity.Text);
-            string category = comboBox_category.Text;
-            Product product = new Product(id, name, quantity, price, category);
+            try
+            {
+                string id = textBox_id.Text;
+                string name = textBox_name.Text;
+                decimal price = Convert.ToDecimal(textBox_price.Text);
+                int quantity = Convert.ToInt32(textBox_quantity.Text);
+                string category = comboBox_category.Text;
+                Product product = new Product(id, name, quantity, price, category);
 
-            productList.AddProduct(product);
-            UpdateGrid(productList.GetProducts());
-            productList.SaveProducts();
-
+                productList.AddProduct(product);
+                UpdateGrid(productList.GetProducts());
+                productList.SaveProducts();
+                clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button_update_Click(object sender, EventArgs e)
@@ -95,7 +95,7 @@ namespace GentlemensCloset
                     int quantity = Convert.ToInt32(textBox_quantity.Text);
                     decimal price = Convert.ToDecimal(textBox_price.Text);
                     string category = comboBox_category.Text;
-                    productList.UpdateCategory(pos, id, name, quantity, price, category);
+                    productList.UpdateProduct(pos, id, name, quantity, price, category);
                     UpdateGrid(productList.GetProducts());
                     productList.SaveProducts();
                     clear();
@@ -109,12 +109,53 @@ namespace GentlemensCloset
 
         private void button_delete_Click(object sender, EventArgs e)
         {
-
+            productList.RemoveProduct(DataGridView_products.SelectedRows[0].Index);
+            UpdateGrid(productList.GetProducts());
+            productList.SaveProducts();
+            clear();
         }
 
         private void button_refresh_Click(object sender, EventArgs e)
         {
+            UpdateGrid(productList.GetProducts());
+        }
 
+        private void comboBox_refresh_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            DataGridView_products.DataSource = productList.GetProductsByCategory(comboBox_refresh.SelectedValue.ToString());
+        }
+
+        private void exitPicture_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button_category_Click(object sender, EventArgs e)
+        {
+            CategoryForm category = new CategoryForm();
+            category.Show();
+            this.Hide();
+        }
+
+        private void button_logout_Click(object sender, EventArgs e)
+        {
+            FormLogin login = new FormLogin();
+            login.Show();
+            this.Hide();
+        }
+
+        private void button_employees_Click(object sender, EventArgs e)
+        {
+            EmployeeForm employeeForm = new EmployeeForm();
+            employeeForm.Show();
+            this.Hide();
+        }
+
+        private void button_selling_Click(object sender, EventArgs e)
+        {
+            SellingForm sellingForm = new SellingForm();
+            sellingForm.Show();
+            this.Hide();
         }
     }
 }

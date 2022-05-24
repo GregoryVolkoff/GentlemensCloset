@@ -12,16 +12,17 @@ namespace GentlemensCloset
 {
     public partial class FormLogin : Form
     {
+        EmployeeList employeeList;
+        public static string employeeName;
         public FormLogin()
         {
             InitializeComponent();
         }
 
-        private void loginLabel_Click(object sender, EventArgs e)
+        private void FormLogin_Load(object sender, EventArgs e)
         {
-
+            employeeList = new EmployeeList();
         }
-
         private void exitPicture_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -42,7 +43,6 @@ namespace GentlemensCloset
             usernameTextBox.Clear();
             passwordTextBox.Clear();
         }
-
         private void loginButton_Click(object sender, EventArgs e)
         {
             if (usernameTextBox.Text == "" || passwordTextBox.Text == "")
@@ -68,7 +68,18 @@ namespace GentlemensCloset
                     }
                     else
                     {
-                       
+                        if (employeeList.GetEmployees().Contains(new Employee(usernameTextBox.Text, passwordTextBox.Text)))
+                        {
+                            employeeName = usernameTextBox.Text;
+                            SellingForm selling = new SellingForm();
+                            selling.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Wrong Username or Password", "Wrong Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        }
                     }
                 }
                 else
@@ -77,5 +88,6 @@ namespace GentlemensCloset
                 }
             }
         }
+
     }
 }

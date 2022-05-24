@@ -83,6 +83,39 @@ namespace GentlemensCloset
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void button_product_Click(object sender, EventArgs e)
+        {
+            ProductForm product = new ProductForm();
+            product.Show();
+            this.Hide();
+        }
+
+        private void exitPicture_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button_logout_Click(object sender, EventArgs e)
+        {
+            FormLogin login = new FormLogin();
+            login.Show();
+            this.Hide();
+        }
+
+        private void button_employees_Click(object sender, EventArgs e)
+        {
+            EmployeeForm employeeForm = new EmployeeForm(); 
+            employeeForm.Show();
+            this.Hide();
+        }
+
+        private void button_selling_Click(object sender, EventArgs e)
+        {
+            SellingForm sellingForm = new SellingForm();
+            sellingForm.Show();
+            this.Hide();
+        }
     }
 
 }

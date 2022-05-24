@@ -39,8 +39,8 @@
             this.panel_options = new System.Windows.Forms.Panel();
             this.button_logout = new Guna.UI2.WinForms.Guna2Button();
             this.button_selling = new Guna.UI2.WinForms.Guna2Button();
-            this.button_category = new Guna.UI2.WinForms.Guna2Button();
-            this.button_employee = new Guna.UI2.WinForms.Guna2Button();
+            this.button_products = new Guna.UI2.WinForms.Guna2Button();
+            this.button_employees = new Guna.UI2.WinForms.Guna2Button();
             this.panel_user = new System.Windows.Forms.Panel();
             this.label_username = new System.Windows.Forms.Label();
             this.pictureBox_user = new System.Windows.Forms.PictureBox();
@@ -72,8 +72,8 @@
             this.panel_options.BackColor = System.Drawing.Color.RoyalBlue;
             this.panel_options.Controls.Add(this.button_logout);
             this.panel_options.Controls.Add(this.button_selling);
-            this.panel_options.Controls.Add(this.button_category);
-            this.panel_options.Controls.Add(this.button_employee);
+            this.panel_options.Controls.Add(this.button_products);
+            this.panel_options.Controls.Add(this.button_employees);
             this.panel_options.Controls.Add(this.panel_user);
             this.panel_options.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_options.Location = new System.Drawing.Point(0, 0);
@@ -100,6 +100,7 @@
             this.button_logout.TabIndex = 4;
             this.button_logout.Text = "Salir";
             this.button_logout.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.button_logout.Click += new System.EventHandler(this.button_logout_Click);
             // 
             // button_selling
             // 
@@ -112,51 +113,54 @@
             this.button_selling.FillColor = System.Drawing.Color.RoyalBlue;
             this.button_selling.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_selling.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button_selling.Location = new System.Drawing.Point(0, 183);
+            this.button_selling.Location = new System.Drawing.Point(0, 186);
             this.button_selling.Margin = new System.Windows.Forms.Padding(2);
             this.button_selling.Name = "button_selling";
             this.button_selling.Size = new System.Drawing.Size(120, 43);
             this.button_selling.TabIndex = 3;
-            this.button_selling.Text = "Venta";
+            this.button_selling.Text = "Ventas";
             this.button_selling.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.button_selling.Click += new System.EventHandler(this.button_selling_Click);
             // 
-            // button_category
+            // button_products
             // 
-            this.button_category.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button_category.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.button_category.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.button_category.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.button_category.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.button_category.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button_category.FillColor = System.Drawing.Color.RoyalBlue;
-            this.button_category.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_category.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button_category.Location = new System.Drawing.Point(0, 140);
-            this.button_category.Margin = new System.Windows.Forms.Padding(2);
-            this.button_category.Name = "button_category";
-            this.button_category.Size = new System.Drawing.Size(120, 43);
-            this.button_category.TabIndex = 2;
-            this.button_category.Text = "Producto";
-            this.button_category.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.button_products.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button_products.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_products.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_products.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_products.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_products.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button_products.FillColor = System.Drawing.Color.RoyalBlue;
+            this.button_products.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_products.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button_products.Location = new System.Drawing.Point(0, 143);
+            this.button_products.Margin = new System.Windows.Forms.Padding(2);
+            this.button_products.Name = "button_products";
+            this.button_products.Size = new System.Drawing.Size(120, 43);
+            this.button_products.TabIndex = 2;
+            this.button_products.Text = "Productos";
+            this.button_products.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.button_products.Click += new System.EventHandler(this.button_product_Click);
             // 
-            // button_employee
+            // button_employees
             // 
-            this.button_employee.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button_employee.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.button_employee.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.button_employee.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.button_employee.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.button_employee.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button_employee.FillColor = System.Drawing.Color.RoyalBlue;
-            this.button_employee.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_employee.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button_employee.Location = new System.Drawing.Point(0, 97);
-            this.button_employee.Margin = new System.Windows.Forms.Padding(2);
-            this.button_employee.Name = "button_employee";
-            this.button_employee.Size = new System.Drawing.Size(120, 43);
-            this.button_employee.TabIndex = 1;
-            this.button_employee.Text = "Empleado";
-            this.button_employee.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.button_employees.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button_employees.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_employees.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_employees.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_employees.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_employees.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button_employees.FillColor = System.Drawing.Color.RoyalBlue;
+            this.button_employees.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_employees.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button_employees.Location = new System.Drawing.Point(0, 100);
+            this.button_employees.Margin = new System.Windows.Forms.Padding(2);
+            this.button_employees.Name = "button_employees";
+            this.button_employees.Size = new System.Drawing.Size(120, 43);
+            this.button_employees.TabIndex = 1;
+            this.button_employees.Text = "Empleados";
+            this.button_employees.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.button_employees.Click += new System.EventHandler(this.button_employees_Click);
             // 
             // panel_user
             // 
@@ -167,7 +171,7 @@
             this.panel_user.Location = new System.Drawing.Point(0, 0);
             this.panel_user.Margin = new System.Windows.Forms.Padding(2);
             this.panel_user.Name = "panel_user";
-            this.panel_user.Size = new System.Drawing.Size(120, 97);
+            this.panel_user.Size = new System.Drawing.Size(120, 100);
             this.panel_user.TabIndex = 0;
             // 
             // label_username
@@ -216,7 +220,7 @@
             this.label_head.Name = "label_head";
             this.label_head.Size = new System.Drawing.Size(273, 23);
             this.label_head.TabIndex = 16;
-            this.label_head.Text = "GESTIONAR CATEGORIAS";
+            this.label_head.Text = "GESTIONAR CATEGORÍAS";
             // 
             // exitPicture
             // 
@@ -229,6 +233,7 @@
             this.exitPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.exitPicture.TabIndex = 11;
             this.exitPicture.TabStop = false;
+            this.exitPicture.Click += new System.EventHandler(this.exitPicture_Click);
             // 
             // panel_main
             // 
@@ -259,7 +264,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DataGridView_categories.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DataGridView_categories.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DataGridView_categories.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataGridView_categories.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DataGridView_categories.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DataGridView_categories.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -281,7 +286,7 @@
             this.DataGridView_categories.DefaultCellStyle = dataGridViewCellStyle3;
             this.DataGridView_categories.EnableHeadersVisualStyles = false;
             this.DataGridView_categories.GridColor = System.Drawing.Color.DarkGray;
-            this.DataGridView_categories.Location = new System.Drawing.Point(341, 38);
+            this.DataGridView_categories.Location = new System.Drawing.Point(281, 50);
             this.DataGridView_categories.Margin = new System.Windows.Forms.Padding(2);
             this.DataGridView_categories.Name = "DataGridView_categories";
             this.DataGridView_categories.ReadOnly = true;
@@ -289,7 +294,7 @@
             this.DataGridView_categories.RowHeadersWidth = 72;
             this.DataGridView_categories.RowTemplate.Height = 31;
             this.DataGridView_categories.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridView_categories.Size = new System.Drawing.Size(470, 442);
+            this.DataGridView_categories.Size = new System.Drawing.Size(548, 448);
             this.DataGridView_categories.TabIndex = 16;
             this.DataGridView_categories.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DataGridView_categories.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -325,10 +330,10 @@
             this.button_update.FillColor = System.Drawing.Color.RoyalBlue;
             this.button_update.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_update.ForeColor = System.Drawing.Color.White;
-            this.button_update.Location = new System.Drawing.Point(124, 171);
+            this.button_update.Location = new System.Drawing.Point(82, 174);
             this.button_update.Margin = new System.Windows.Forms.Padding(2);
             this.button_update.Name = "button_update";
-            this.button_update.Size = new System.Drawing.Size(98, 24);
+            this.button_update.Size = new System.Drawing.Size(97, 24);
             this.button_update.TabIndex = 11;
             this.button_update.Text = "Actualizar";
             this.button_update.Click += new System.EventHandler(this.button_update_Click);
@@ -343,10 +348,10 @@
             this.button_delete.FillColor = System.Drawing.Color.RoyalBlue;
             this.button_delete.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_delete.ForeColor = System.Drawing.Color.White;
-            this.button_delete.Location = new System.Drawing.Point(226, 171);
+            this.button_delete.Location = new System.Drawing.Point(183, 174);
             this.button_delete.Margin = new System.Windows.Forms.Padding(2);
             this.button_delete.Name = "button_delete";
-            this.button_delete.Size = new System.Drawing.Size(98, 24);
+            this.button_delete.Size = new System.Drawing.Size(88, 24);
             this.button_delete.TabIndex = 12;
             this.button_delete.Text = "Eliminar";
             this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
@@ -361,10 +366,10 @@
             this.button_add.FillColor = System.Drawing.Color.RoyalBlue;
             this.button_add.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_add.ForeColor = System.Drawing.Color.White;
-            this.button_add.Location = new System.Drawing.Point(22, 172);
+            this.button_add.Location = new System.Drawing.Point(4, 174);
             this.button_add.Margin = new System.Windows.Forms.Padding(2);
             this.button_add.Name = "button_add";
-            this.button_add.Size = new System.Drawing.Size(98, 24);
+            this.button_add.Size = new System.Drawing.Size(74, 24);
             this.button_add.TabIndex = 10;
             this.button_add.Text = "Añadir";
             this.button_add.Click += new System.EventHandler(this.button_add_Click);
@@ -383,13 +388,13 @@
             this.textBox_description.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBox_description.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_description.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBox_description.Location = new System.Drawing.Point(101, 127);
+            this.textBox_description.Location = new System.Drawing.Point(102, 130);
             this.textBox_description.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.textBox_description.Name = "textBox_description";
             this.textBox_description.PasswordChar = '\0';
             this.textBox_description.PlaceholderText = "";
             this.textBox_description.SelectedText = "";
-            this.textBox_description.Size = new System.Drawing.Size(223, 22);
+            this.textBox_description.Size = new System.Drawing.Size(160, 22);
             this.textBox_description.TabIndex = 5;
             // 
             // label_description
@@ -397,7 +402,7 @@
             this.label_description.AutoSize = true;
             this.label_description.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_description.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label_description.Location = new System.Drawing.Point(19, 132);
+            this.label_description.Location = new System.Drawing.Point(20, 134);
             this.label_description.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_description.Name = "label_description";
             this.label_description.Size = new System.Drawing.Size(83, 15);
@@ -418,13 +423,13 @@
             this.textBox_name.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBox_name.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_name.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBox_name.Location = new System.Drawing.Point(101, 82);
+            this.textBox_name.Location = new System.Drawing.Point(102, 90);
             this.textBox_name.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.textBox_name.Name = "textBox_name";
             this.textBox_name.PasswordChar = '\0';
             this.textBox_name.PlaceholderText = "";
             this.textBox_name.SelectedText = "";
-            this.textBox_name.Size = new System.Drawing.Size(223, 22);
+            this.textBox_name.Size = new System.Drawing.Size(160, 22);
             this.textBox_name.TabIndex = 3;
             // 
             // label_name
@@ -432,7 +437,7 @@
             this.label_name.AutoSize = true;
             this.label_name.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_name.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label_name.Location = new System.Drawing.Point(19, 87);
+            this.label_name.Location = new System.Drawing.Point(20, 94);
             this.label_name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_name.Name = "label_name";
             this.label_name.Size = new System.Drawing.Size(59, 15);
@@ -453,13 +458,13 @@
             this.textBox_id.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBox_id.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_id.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBox_id.Location = new System.Drawing.Point(101, 38);
+            this.textBox_id.Location = new System.Drawing.Point(102, 50);
             this.textBox_id.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.textBox_id.Name = "textBox_id";
             this.textBox_id.PasswordChar = '\0';
             this.textBox_id.PlaceholderText = "";
             this.textBox_id.SelectedText = "";
-            this.textBox_id.Size = new System.Drawing.Size(223, 22);
+            this.textBox_id.Size = new System.Drawing.Size(160, 22);
             this.textBox_id.TabIndex = 1;
             // 
             // label_id
@@ -467,7 +472,7 @@
             this.label_id.AutoSize = true;
             this.label_id.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_id.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label_id.Location = new System.Drawing.Point(19, 42);
+            this.label_id.Location = new System.Drawing.Point(20, 54);
             this.label_id.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_id.Name = "label_id";
             this.label_id.Size = new System.Drawing.Size(22, 15);
@@ -509,8 +514,8 @@
         private System.Windows.Forms.Panel panel_options;
         private Guna.UI2.WinForms.Guna2Button button_logout;
         private Guna.UI2.WinForms.Guna2Button button_selling;
-        private Guna.UI2.WinForms.Guna2Button button_category;
-        private Guna.UI2.WinForms.Guna2Button button_employee;
+        private Guna.UI2.WinForms.Guna2Button button_products;
+        private Guna.UI2.WinForms.Guna2Button button_employees;
         private System.Windows.Forms.Panel panel_user;
         private System.Windows.Forms.Label label_username;
         private System.Windows.Forms.PictureBox pictureBox_user;
