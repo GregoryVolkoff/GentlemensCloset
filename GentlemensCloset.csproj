@@ -119,6 +119,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SellingForm.resx">
       <DependentUpon>SellingForm.cs</DependentUpon>
@@ -136,6 +137,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\admin_settings_male_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\blue_closet_160px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\close_window_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\closet_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\user_100px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

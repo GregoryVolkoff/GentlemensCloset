@@ -159,30 +159,35 @@
             // ID
             // 
             this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 9;
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
             // 
             // name
             // 
             this.name.HeaderText = "Nombre";
+            this.name.MinimumWidth = 9;
             this.name.Name = "name";
             this.name.ReadOnly = true;
             // 
             // price
             // 
             this.price.HeaderText = "Precio";
+            this.price.MinimumWidth = 9;
             this.price.Name = "price";
             this.price.ReadOnly = true;
             // 
             // quantity
             // 
             this.quantity.HeaderText = "Cantidad";
+            this.quantity.MinimumWidth = 9;
             this.quantity.Name = "quantity";
             this.quantity.ReadOnly = true;
             // 
             // total
             // 
             this.total.HeaderText = "Total";
+            this.total.MinimumWidth = 9;
             this.total.Name = "total";
             this.total.ReadOnly = true;
             // 
@@ -656,11 +661,11 @@
             // 
             // pictureBox_user
             // 
-            this.pictureBox_user.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_user.Image")));
-            this.pictureBox_user.Location = new System.Drawing.Point(28, 17);
+            this.pictureBox_user.Image = global::GentlemensCloset.Properties.Resources.admin_settings_male_100px;
+            this.pictureBox_user.Location = new System.Drawing.Point(34, 20);
             this.pictureBox_user.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_user.Name = "pictureBox_user";
-            this.pictureBox_user.Size = new System.Drawing.Size(55, 54);
+            this.pictureBox_user.Size = new System.Drawing.Size(51, 51);
             this.pictureBox_user.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox_user.TabIndex = 0;
             this.pictureBox_user.TabStop = false;
@@ -774,15 +779,19 @@
             // 
             // label_username
             // 
+            this.label_username.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label_username.AutoSize = true;
+            this.label_username.BackColor = System.Drawing.Color.RoyalBlue;
             this.label_username.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_username.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label_username.Location = new System.Drawing.Point(31, 73);
+            this.label_username.Location = new System.Drawing.Point(20, 73);
             this.label_username.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_username.Name = "label_username";
-            this.label_username.Size = new System.Drawing.Size(54, 15);
+            this.label_username.Size = new System.Drawing.Size(76, 15);
             this.label_username.TabIndex = 16;
-            this.label_username.Text = "ADMIN";
+            this.label_username.Text = "GREGORY";
             this.label_username.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SellingForm

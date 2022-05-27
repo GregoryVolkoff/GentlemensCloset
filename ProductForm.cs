@@ -15,6 +15,7 @@ namespace GentlemensCloset
         }
         private void ProductForm_Load(object sender, EventArgs e)
         {
+
             categoryList = new CategoryList();
             productList = new ProductList();
             LoadComboBox(categoryList);
@@ -56,7 +57,6 @@ namespace GentlemensCloset
             DataGridView_products.Columns["price"].HeaderText = "Precio";
             DataGridView_products.Columns["category"].HeaderText = "Categoría";
         }
-
         private void button_add_Click(object sender, EventArgs e)
         {
             try

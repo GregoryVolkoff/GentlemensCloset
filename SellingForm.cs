@@ -15,13 +15,28 @@ namespace GentlemensCloset
         ProductList productList;
         DGVPrinter printer;
 
+        string role;
         public SellingForm()
         {
             InitializeComponent();
         }
+        public SellingForm(string role)
+        {
+            InitializeComponent();
+            this.role = role;
+        }
 
         private void SellingForm_Load(object sender, EventArgs e)
         {
+            if (role == "EMPLEADO")
+            {
+                button_categories.Hide();
+                button_employees.Hide();
+                button_productos.Hide();
+
+                pictureBox_user.Image = global::GentlemensCloset.Properties.Resources.user_100px;
+            }
+
             label_date.Text = DateTime.Today.ToShortDateString();
             label_username.Text = FormLogin.employeeName;
 

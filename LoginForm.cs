@@ -57,6 +57,7 @@ namespace GentlemensCloset
                     {
                         if (usernameTextBox.Text == "Admin" && passwordTextBox.Text == "Admin123")
                         {
+                            employeeName = usernameTextBox.Text.ToUpper();
                             CategoryForm category = new CategoryForm();
                             category.Show();
                             this.Hide();
@@ -70,8 +71,8 @@ namespace GentlemensCloset
                     {
                         if (employeeList.GetEmployees().Contains(new Employee(usernameTextBox.Text, passwordTextBox.Text)))
                         {
-                            employeeName = usernameTextBox.Text;
-                            SellingForm selling = new SellingForm();
+                            employeeName = usernameTextBox.Text.ToUpper();
+                            SellingForm selling = new SellingForm(roleComboBox.Text);
                             selling.Show();
                             this.Hide();
                         }

@@ -199,11 +199,12 @@
             this.passwordTextBox.Location = new System.Drawing.Point(275, 326);
             this.passwordTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.PasswordChar = '\0';
+            this.passwordTextBox.PasswordChar = '●';
             this.passwordTextBox.PlaceholderText = "";
             this.passwordTextBox.SelectedText = "";
             this.passwordTextBox.Size = new System.Drawing.Size(190, 26);
             this.passwordTextBox.TabIndex = 7;
+            this.passwordTextBox.UseSystemPasswordChar = true;
             // 
             // loginButton
             // 
